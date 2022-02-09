@@ -3,7 +3,24 @@
 Crop | Home
 {%endblock%}
 {%block content%}
-    <div class="container">
-        <h1 class="text-center">Hello World!</h1>
+    <div id="app" class="container">
+        
+        <h1 class="text-center">[[message]]</h1>
+        <todo-item></todo-item>>
+        <input type="text" v-model="message">
     </div>
+{%endblock%}
+{%block script%}
+    <script>
+        Vue.component('todo-item', {
+            template: '<li>This is a todo</li>'
+          })
+        var app = new Vue({
+            delimiters : ['[[',']]'],
+            el: '#app',
+            data: {
+              message: 'Hello Vaithi!'
+            }
+          })
+    </script>
 {%endblock%}
