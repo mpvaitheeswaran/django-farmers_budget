@@ -19,3 +19,11 @@ class Expense(models.Model):
     date = models.DateTimeField(auto_now=True)
     def __str__(self) -> str:
         return f'{self.name}'
+
+class Market(models.Model):
+    crop = models.ForeignKey(Crop,on_delete=models.CASCADE)
+    buyer_name = models.CharField(max_length=25,blank=True)
+    mass = models.FloatField(default=0)
+    rate_per_kg = models.FloatField(default=0)
+    cost = models.FloatField(default=0)
+    date = models.DateTimeField(auto_now=True)

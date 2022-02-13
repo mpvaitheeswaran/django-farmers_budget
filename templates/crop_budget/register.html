@@ -6,7 +6,11 @@ Register
     <div id="app" class="container">
         
         <h1 class="text-center">Register page</h1>
-        
+        <form method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <input type="submit" value="Register">
+        </form>
     </div>
 {%endblock%}
 {%block script%}
