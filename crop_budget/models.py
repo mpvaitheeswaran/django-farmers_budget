@@ -8,7 +8,8 @@ class Crop(models.Model):
     crop_name = models.CharField(max_length=15)
     total_expense = models.FloatField(default=0,blank=True)
     crop_value = models.FloatField(default=0,blank=True)
-    date = models.DateTimeField(auto_now=False)
+    date = models.DateTimeField(auto_now_add=False)
+    is_closed = models.BooleanField(default=False)
     def __str__(self) -> str:
         return f'{self.crop_name}'
 
@@ -16,7 +17,7 @@ class Expense(models.Model):
     crop = models.ForeignKey(Crop,on_delete=models.CASCADE)
     name = models.CharField(max_length=15)
     cost = models.FloatField(default=0)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
         return f'{self.name}'
 
@@ -26,4 +27,4 @@ class Market(models.Model):
     mass = models.FloatField(default=0)
     rate_per_kg = models.FloatField(default=0)
     cost = models.FloatField(default=0)
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now_add=True)
