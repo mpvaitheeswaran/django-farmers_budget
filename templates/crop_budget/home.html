@@ -3,19 +3,13 @@
 Crop | Home
 {%endblock%}
 {%block content%}
-    <div id="app" class="container">
-        
-        <h1 class="text-center">[[message]]</h1>
-        <a href="{%url 'logout'%}">Logout</a>
-        <todo-item></todo-item>>
-        <input type="text" v-model="message">
+    {% include 'partials/navbar.html' %}
+    <div class="container">
+        <h3>Dashboard</h3>
     </div>
 {%endblock%}
 {%block script%}
     <script>
-        Vue.component('todo-item', {
-            template: '<li>This is a todo</li>'
-          })
         var app = new Vue({
             delimiters : ['[[',']]'],
             el: '#app',

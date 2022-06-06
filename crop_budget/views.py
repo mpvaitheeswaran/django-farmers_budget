@@ -25,3 +25,7 @@ def logout(request):
 @login_required
 def home(request):
     return render(request,'crop_budget/home.html')
+
+@login_required
+def crop(request):
+    return render(request,'crop_budget/crop.html')

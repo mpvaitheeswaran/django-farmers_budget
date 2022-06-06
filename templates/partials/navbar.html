@@ -1,0 +1,22 @@
+{%url 'home' as home_url%}
+{%url 'crop' as crop_url%}
+<nav class="navbar navbar-expand-lg navbar-light bg-light container">
+    <a class="navbar-brand" href="#">Former'S Budget</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item {%if request.path == home_url%}active{%endif%}">
+          <a class="nav-link" href="{%url 'home'%}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item {%if request.path == crop_url%}active{%endif%}">
+          <a class="nav-link" href="{%url 'crop'%}">Crops</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a href="{%url 'logout'%}" class="btn btn-primary my-2 my-sm-0"><i class="bi bi-box-arrow-right"></i> Logout</a>
+      </form>
+    </div>
+  </nav>
